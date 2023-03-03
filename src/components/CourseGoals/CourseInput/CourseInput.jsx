@@ -15,7 +15,7 @@ const FormControl = styled.div`
   & input {
     display: block;
     width: 100%;
-    border: 1px solid #ccc;
+    border: 1px solid ${(properties) => (properties.invalid ? "red" : "black")};
     font: inherit;
     line-height: 1.5rem;
     padding: 0 0.25rem;
@@ -56,7 +56,8 @@ const CourseInput = (properties) => {
   return (
     <form onSubmit={formSubmitHandler}>
       {/* <FormControl className={`form-control ${!isValid ? "invalid" : ""}`}> */}
-      <FormControl className={!isValid && "invalid"}>
+      {/* <FormControl className={!isValid && "invalid"}> */}
+      <FormControl invalid={!isValid}>
         <label>Set Course Goal</label>
         <input
           /* Conditional Inline CSS */
