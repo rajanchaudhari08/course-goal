@@ -1,6 +1,8 @@
 // import "./Button.css";
-import styled from "styled-components";
+// import styled from "styled-components";
+import styles from "./Button.module.css";
 
+/*
 const Button = styled.button`
     width: 100%;
     font: inherit;
@@ -23,13 +25,18 @@ const Button = styled.button`
       width: auto;
     }
 `;
-/* 
+ */
+
 const Button = (properties) => {
   return (
-    <button type={properties.type} className="button" onClick={properties.onClick}>
+    <button
+      type={properties.type}
+      className={styles.button}
+      onClick={properties.onClick}
+    >
       {properties.children}
     </button>
   );
 };
-*/
+
 export default Button;
